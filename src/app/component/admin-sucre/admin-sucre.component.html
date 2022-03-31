@@ -1,0 +1,29 @@
+
+<button (click)="goToAdd()" class="btn btn-info">Add Sucre</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Quntité</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        
+        <tr *ngFor="let sucre of sucres">
+            <td>{{sucre._id}}</td>
+            <td>{{sucre.nomProduit}}</td>
+            <td>{{sucre.quantite}}</td>
+            
+            <td>{{sucre.prix}}</td>
+            <td>
+                <button class="btn btn-success" (click)="goToDisplay(sucre._id)">Display</button>
+                <button class="btn btn-info" (click)="goToEdit(sucre._id)">Edit</button>
+                <button class="btn btn-danger" (click)="deletesucre(sucre._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+<button (click)="goToAdd()" class="btn btn-info">Add Sale</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Quntité</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        
+        <tr *ngFor="let sale of sales">
+            <td>{{sale._id}}</td>
+            <td>{{sale.nomProduit}}</td>
+            <td>{{sale.quantite}}</td>
+            
+            <td>{{sale.prix}}</td>
+            <td>
+                <button class="btn btn-success" (click)="goToDisplay(sale._id)">Display</button>
+                <button class="btn btn-info" (click)="goToEdit(sale._id)">Edit</button>
+                <button class="btn btn-danger" (click)="deletesale(sale._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
